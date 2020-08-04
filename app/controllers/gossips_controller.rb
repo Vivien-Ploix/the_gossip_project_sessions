@@ -1,15 +1,22 @@
 class GossipsController < ApplicationController
+
   def show
     @gossips = Gossip.find(params[:id])
   end
 
-
+  # GET /users/new
   def new
   	@post = Gossip.new
   end
 
+  # POST users
   def create
-  	Gossip.create(title: params[:title], content:params[:content], user_id: User.find(rand(User.first.id..User.last.id))
+    id = User.all.sample.id
+    Gossip.create(title: params[:title], content:params[:content], user_id: id)
+    
   end
+
+
+
 
 end

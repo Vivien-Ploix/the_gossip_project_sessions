@@ -6,19 +6,38 @@
       <div class="alert alert-danger "><%= @message %></div>
     <% end %>
 
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
 
+    <h2 style='margin-bottom:50px'>Create your gossip</h2>
+
+    <div class="row ml-1">
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-body text-success">
+
+      <h6 class="card-title">
       <%= label_tag 'Title' %>
       <%= text_field_tag 'title', @post.title %>
       <br /> <br />
+      </h6>
 
+      <h6 class="card-title"><%= form_tag url_for(action: 'create'), method: "post" do %></h6>
+      
+
+      <h6 class="card-title">
       <%= label_tag 'Body' %>
       <%= text_area_tag 'content', @post.content %>
       <br /> <br />
+      </h6>
+  
 
-      <%= submit_tag "Create Post" %>
+  
+        <%= submit_tag "Create Post" %>
+  
+      <% end %>
 
-    <% end %>
+
+    </div>
+    </div>
+    </div>
 
     <!-- ... -->
   </body>

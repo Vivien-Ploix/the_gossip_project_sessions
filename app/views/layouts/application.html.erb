@@ -39,11 +39,21 @@
 
   </div>
     </div>
+
  
 </nav>
+
+
+<% if flash[:success] != nil %>
+  
+<div class="alert alert-success" style="height:50px" role="alert"><p style="margin-left:10%"><%= flash[:success] %></p></div>
+
+<% end %>
+
 <div class="container" style="margin-top: 80px;">
   <%= yield %>
 
 </div>
+
   </body>
 </html>

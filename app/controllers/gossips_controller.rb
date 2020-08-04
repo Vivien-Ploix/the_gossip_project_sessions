@@ -16,7 +16,7 @@ class GossipsController < ApplicationController
 
     if @post.save
       @message = "The super potin was succesfully saved !"
-      flash[:success] = "Le livre a été mis à jour."
+      flash[:success] = "The super potin was succesfully saved !"
       redirect_to root_path
     else
       @alert = true

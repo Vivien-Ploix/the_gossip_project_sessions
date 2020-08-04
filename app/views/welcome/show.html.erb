@@ -13,15 +13,17 @@
     <div class="container mt-2">
       <h1>Bienvenue <%= @first_name %>! </h1>
 
-      <h4 class="mb-5 mt-3">Poster un nouveau potin</h4>
 
-      <%= link_to 'cliquez ici', new_gossip_path %>
 
-      <% if flash[:success] != nil %>
-  
-      <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+      
+      <button type="button" class="btn btn-info">
+      <%= link_to 'Poster un nouveau potin', new_gossip_path, :class => "btn-info" %>
+      </button>
 
-      <% end %>
+           
+
+
+      
 
 
       <h4 class="mb-5 mt-3">Voici la liste des potins des moussaillons de THP</h4>

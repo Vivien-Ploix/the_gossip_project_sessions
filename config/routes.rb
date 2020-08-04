@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'welcome/:first_name', to: 'welcome#show'
   #get 'gossips/:id', to: 'gossip#gossip', as:'gossip'
 
-  get 'profile/:first_name', to: 'profile#profile', as: 'profile'
+  #get 'profile/:first_name', to: 'profile#profile', as: 'profile'
 
   resources :profile
   resources :gossips

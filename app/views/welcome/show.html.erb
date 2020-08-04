@@ -13,6 +13,13 @@
     <div class="container mt-2">
       <h1>Bienvenue <%= @first_name %>! </h1>
 
+      <h4 class="mb-5 mt-3">Poster un nouveau potin</h4>
+
+      <%= link_to 'cliquez ici', new_gossip_path %>
+
+
+
+
       <h4 class="mb-5 mt-3">Voici la liste des potins des moussaillons de THP</h4>
         <div class="row mb-3">
       <% Gossip.all.each do |gossip|%>

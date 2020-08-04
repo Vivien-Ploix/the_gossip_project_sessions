@@ -16,10 +16,12 @@ class GossipsController < ApplicationController
 
     if gossip.save
       @message = "The super potin was succesfully saved !"
+      flash[:success] = "Le livre a été mis à jour."
       redirect_to root_path
     else
       @alert = true
       @message = "Error: " + gossip.errors.messages.to_a.flatten[1]
+      render new_gossip_path
     end
   end
 

@@ -8,9 +8,6 @@ default: &default
 development:
   <<: *default
   database: the_gossip_project_views_development
-  host: localhost
-  username: postgres
-  password: postgres
 
 test:
   <<: *default

@@ -13,7 +13,7 @@
     <div class="row">
       <div class="card border-success mb-3" style="max-width: 18rem;">
         <div class="card-header">
-          <%= link_to "Auteur: " + @gossips.user.first_name , profile_path(:first_name => @gossips.user.first_name)%></p>
+          <%= link_to "Auteur: " + @gossips.user.first_name , profile_path(:id => @gossips.user.first_name)%></p>
         </div>
         <div class="card-body">
           <p class="card-text">Id: <%=  @gossips.id %></p>

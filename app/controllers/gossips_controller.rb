@@ -12,15 +12,15 @@ class GossipsController < ApplicationController
   # POST /users
   def create
     id = User.all.sample.id
-    gossip = Gossip.new(title: params[:title], content:params[:content], user_id: id)
+    @post = Gossip.new(title: params[:title], content:params[:content], user_id: id)
 
-    if gossip.save
+    if @post.save
       @message = "The super potin was succesfully saved !"
       flash[:success] = "Le livre a été mis à jour."
       redirect_to root_path
     else
       @alert = true
-      @message = "Error: " + gossip.errors.messages.to_a.flatten[1]
+      @message = "Error: " + @post.errors.messages.to_a.flatten[1]
       render new_gossip_path
     end
   end

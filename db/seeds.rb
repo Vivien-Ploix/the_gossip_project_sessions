@@ -52,7 +52,7 @@ end
 
   10.times do
     tag = Tag.create(
-      title: "#" + Faker::Dessert.variety,
+      title: "#" + Faker::Dessert.variety.delete(' '),
     )
     tags << tag
   end

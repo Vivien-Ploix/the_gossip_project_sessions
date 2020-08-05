@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :profile
   resources :gossips
   resources :cities
+
+  resources :gossips do 
+    resources :comments
+  end 
 end

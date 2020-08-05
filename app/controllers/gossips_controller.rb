@@ -2,6 +2,9 @@ class GossipsController < ApplicationController
 
   def show
     @gossips = Gossip.find(params[:id])
+    @comment = Comment.new
+    @comment.gossip_id = @gossips.id
+
   end
 
   # GET /users/new

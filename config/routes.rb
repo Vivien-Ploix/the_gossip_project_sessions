@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #get 'cities/show'
   #get 'gossips/show'
   root to:'welcome#show'
 
@@ -12,5 +13,5 @@ Rails.application.routes.draw do
 
   resources :profile
   resources :gossips
-  
+  resources :cities
 end

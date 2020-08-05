@@ -8,7 +8,7 @@
 <body>
 
   <div class="container mt-4">
-    <h2>Profil de l'auteur:</h2>
+    <h2>Profil de l auteur:</h2>
 
     <div class="row">
       <div class="card border-success mb-3" style="max-width: 18rem;">
@@ -17,6 +17,11 @@
         <h6 class="card-title">Age: <%= @user.age %></h6>
         
         <h6 class="card-title">Ville: <%= @user.city.name %></h6>
+        <h6 class="card-title">
+        <%= link_to "Ville de l'auteur: " + @user.city.name, city_path(:id => @user.city.id)%>
+        </h6>
+
+
         <h6 class="card-title">Email: <%= @user.email %></h6>
         <p class="card-text text-muted"><%= @user.description %></p>
       </div>

@@ -44,7 +44,7 @@
                 </div>
                 <div class=" pt-1" style="positon: relative">
                   <a class="h5"
-                    href="/profile/<%= gossip.user.first_name %>/"><b><%= gossip.user.first_name %></b></a><br>
+                    href="<%= profile_path(:id => gossip.user.id)%>"><b><%= gossip.user.first_name %></b></a><br>
                   <small class="text-muted"
                     style="margin-top:-1px;position:absolute"><sup><%= gossip.created_at %></sup></small>
                 </div>

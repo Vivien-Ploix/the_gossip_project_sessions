@@ -53,3 +53,9 @@ Réseau social de partage de potins, créé dans le cadre de The Hacking Project
 - Glow in the dark mode, et canards qui te suivent tout le temps 🦆🦆🦆
 
 
+ ## Contributeurs
+
+- [Stanislas BASQUIN](https://github.com/StanislasBASQUIN)
+- [Vivien Ploix](https://github.com/Vivien-Ploix)
+- [Mathieu JOLY](https://github.com/mathieu-superpose)
+

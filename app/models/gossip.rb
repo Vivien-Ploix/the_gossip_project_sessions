@@ -10,7 +10,11 @@ class Gossip < ApplicationRecord
 	
 
 	validates :content,
-	    presence: true
+			presence: true
+			
+
+	has_many :likes, dependent: :destroy
+
 	
 
 end

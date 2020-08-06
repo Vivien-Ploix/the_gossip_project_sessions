@@ -26,6 +26,11 @@
           <%= link_to "Editer l'article", edit_gossip_path(:id => @gossip.id)%>
           <td><%= link_to "Destroy", @gossip, method: :delete, data: { confirm: "Are you sure?" } %></td>
           <% end %>
+        
+          <% if @gossip.user != current_user %>
+          <%= button_to 'Like', gossip_likes_path(@gossip), method: :post %>
+          <%end%>
+          <p class="card-text">Likes: <%=  @gossip.likes.count %></p>
           </br>
 
 

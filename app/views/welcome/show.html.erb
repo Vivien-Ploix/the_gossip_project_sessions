@@ -60,6 +60,13 @@
               <%= link_to gossip.id.to_s + " " +gossip.title, gossip_path(:id => gossip.id) %>
             </div>
 
+            <% if gossip.user != current_user %>
+            <%= button_to 'Like', gossip_likes_path(gossip), method: :post %>
+            <%end%>
+
+            <p><%= gossip.likes.count %> Likes </p> 
+
+
           </div>
         </div>
       <%end%>

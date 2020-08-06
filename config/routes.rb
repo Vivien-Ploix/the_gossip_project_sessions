@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :gossips do 
     resources :comments
   end 
+
+  resources :users
 end

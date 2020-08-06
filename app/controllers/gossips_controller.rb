@@ -14,8 +14,7 @@ class GossipsController < ApplicationController
 
   # POST /users
   def create
-    id = User.all.sample.id
-    @post = Gossip.new(title: params[:title], content:params[:content], user_id: id)
+    @post = Gossip.new(title: params[:title], content:params[:content], user_id: current_user.id)
 
     if @post.save
       @message = "The gossip was succesfully saved !"
@@ -52,5 +51,11 @@ class GossipsController < ApplicationController
     @gossip.destroy
     redirect_to root_path
   end 
+
+
+  
+  def require_author
+    redirect_to login_path unless @.user == current_user
+  end
 
 end

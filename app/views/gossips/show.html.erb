@@ -14,7 +14,7 @@
     <div class="row">
       <div class="card border-success mb-3" style="max-width: 18rem;">
         <div class="card-header">
-          <%= link_to "Auteur: " + @gossips.user.first_name + " " + @gossips.user.last_name , profile_path(:id => @gossips.user.id)%></p>
+        <%= link_to "Auteur: " + @gossips.user.first_name + " " + @gossips.user.last_name , profile_path(:id => @gossips.user.id)%></p>
         </div>
         <div class="card-body">
           <p class="card-text">Id: <%=  @gossips.id %></p>
@@ -22,10 +22,12 @@
           <p class="card-text">Contenu: <%=  @gossips.content %></p>
 
           <%= link_to "Ville de l'auteur: " + @gossips.user.city.name, city_path(:id => @gossips.user.city.id)%></br>
-
-          <%= link_to "Editer l'article", edit_gossip_path(:id => @gossips.id)%></br>
-
+          <% if @gossips.user == current_user %>
+          <%= link_to "Editer l'article", edit_gossip_path(:id => @gossips.id)%>
           <td><%= link_to "Destroy", @gossips, method: :delete, data: { confirm: "Are you sure?" } %></td>
+          <% end %>
+          </br>
+
 
         </div>
       </div>

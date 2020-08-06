@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+  before_action :set_current_user, only: [:create, :edit, :update, :destroy]
+
+
   def new
     @comment = Comment.new
   end
@@ -7,7 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new
     @gossip = Gossip.find(params[:gossip_id])
-    @comment = Comment.create(content: params[:content], user: User.last, gossip: @gossip)
+    @comment = Comment.create(content: params[:content], user_id: current_user.id, gossip: @gossip)
     redirect_to gossip_path(@gossip.id)
   end
 

@@ -46,6 +46,10 @@
           <div class="ml-auto d-flex">
             Auteur: <%=comment.user.first_name%><br>
             Content: <%=comment.content%>
+            <%= link_to "Editer", edit_gossip_comment_path(@gossips.id, comment.id), class: "btn btn-secondary pl-2 mr-2"%>
+            <a href="/gossips/<%= @gossips.id %>/comments/<%= comment.id %>" class= "btn btn-danger mr-1" data-confirm ="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+            <a href="/gossips/<%= @gossips.id %>/comments/<%= comment.id %>" class= "btn btn-danger mr-1" data-confirm ="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+
           </div>
         </div>
 

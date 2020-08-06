@@ -16,8 +16,9 @@ class CommentsController < ApplicationController
   end 
 
   def update
+    @gossip = Gossip.find(params[:gossip_id])
     @comment = Comment.find(params[:id])
-    @comment.update(content: params[:content], user: User.last, gossip: Gossip.find(params[:gossip_id]))
+    @comment = @comment.update(content: params[:content], user_id: @gossip.user.id , gossip_id: @gossip.id)
     redirect_to gossip_path(params[:gossip_id])
   end
 
@@ -40,9 +41,10 @@ class CommentsController < ApplicationController
 
 
   def destroy
+    @gossip = Gossip.find(params[:gossip_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to root_path
+    redirect_to gossip_path(@gossip.id)
   end 
 
 

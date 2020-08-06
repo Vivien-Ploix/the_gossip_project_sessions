@@ -8,10 +8,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-
-  private
-
-  def require_author
-    redirect_to login_path unless @post.user == current_user
-  end
+  def set_user
+    redirect_to login_path unless session[:user_id] != nil
+  end 
+  
 end

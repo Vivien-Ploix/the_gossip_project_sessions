@@ -14,17 +14,17 @@
     <div class="row">
       <div class="card border-success mb-3" style="max-width: 18rem;">
         <div class="card-header">
-        <%= link_to "Auteur: " + @gossips.user.first_name + " " + @gossips.user.last_name , profile_path(:id => @gossips.user.id)%></p>
+        <%= link_to "Auteur: " + @gossip.user.first_name + " " + @gossip.user.last_name , profile_path(:id => @gossip.user.id)%></p>
         </div>
         <div class="card-body">
-          <p class="card-text">Id: <%=  @gossips.id %></p>
-          <p class="card-text">Titre: <%=  @gossips.title  %></p>
-          <p class="card-text">Contenu: <%=  @gossips.content %></p>
+          <p class="card-text">Id: <%=  @gossip.id %></p>
+          <p class="card-text">Titre: <%=  @gossip.title  %></p>
+          <p class="card-text">Contenu: <%=  @gossip.content %></p>
 
-          <%= link_to "Ville de l'auteur: " + @gossips.user.city.name, city_path(:id => @gossips.user.city.id)%></br>
-          <% if @gossips.user == current_user %>
-          <%= link_to "Editer l'article", edit_gossip_path(:id => @gossips.id)%>
-          <td><%= link_to "Destroy", @gossips, method: :delete, data: { confirm: "Are you sure?" } %></td>
+          <%= link_to "Ville de l'auteur: " + @gossip.user.city.name, city_path(:id => @gossip.user.city.id)%></br>
+          <% if @gossip.user == current_user %>
+          <%= link_to "Editer l'article", edit_gossip_path(:id => @gossip.id)%>
+          <td><%= link_to "Destroy", @gossip, method: :delete, data: { confirm: "Are you sure?" } %></td>
           <% end %>
           </br>
 
@@ -37,8 +37,8 @@
 
 
   <!-- List gossip -->
-<h3 class="mt-4 mb-4">Les commentaires de <%= @gossips.title %>: <%=  @gossips.comments.count%></h3>
-<% @gossips.comments.each do |comment|%>
+<h3 class="mt-4 mb-4">Commentaires: <%=  @gossip.comments.count%></h3>
+<% @gossip.comments.each do |comment|%>
 <div class="row my-3">
   <div class="col-md-12">
     <div class="card p-2">
@@ -48,10 +48,8 @@
           <div class="ml-auto d-flex">
             Auteur: <%=comment.user.first_name%><br>
             Content: <%=comment.content%>
-            <%= link_to "Editer", edit_gossip_comment_path(@gossips.id, comment.id), class: "btn btn-secondary pl-2 mr-2"%>
-            <a href="/gossips/<%= @gossips.id %>/comments/<%= comment.id %>" class= "btn btn-danger mr-1" data-confirm ="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-            <a href="/gossips/<%= @gossips.id %>/comments/<%= comment.id %>" class= "btn btn-danger mr-1" data-confirm ="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-
+            <%= link_to "Editer", edit_gossip_comment_path(@gossip.id, comment.id), class: "btn btn-secondary pl-2 mr-2"%>
+            <a href="/gossips/<%= @gossip.id %>/comments/<%= comment.id %>" class= "btn btn-danger mr-1" data-confirm ="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
           </div>
         </div>
 

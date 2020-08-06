@@ -1,28 +1,30 @@
 class GossipsController < ApplicationController
+  before_action :set_user, only: [:new, :create, :show]
+  before_action :require_author, only: [:edit, :update, :destroy]
 
   def show
-    @gossips = Gossip.find(params[:id])
+    @gossip = Gossip.find(params[:id])
     @comment = Comment.new
-    @comment.gossip_id = @gossips.id
+    @comment.gossip_id = @gossip.id
 
   end
 
   # GET /users/new
   def new
-  	@post = Gossip.new
+  	@gossip = Gossip.new
   end
 
   # POST /users
   def create
-    @post = Gossip.new(title: params[:title], content:params[:content], user_id: current_user.id)
+    @gossip = Gossip.new(title: params[:title], content:params[:content], user_id: current_user.id)
 
-    if @post.save
+    if @gossip.save
       @message = "The gossip was succesfully saved !"
       flash[:success] = "The gossip was succesfully saved !"
       redirect_to root_path
     else
       @alert = true
-      @message = "Error: " + @post.errors.messages.to_a.flatten[1]
+      @message = "Error: " + @gossip.errors.messages.to_a.flatten[1]
       render new_gossip_path
     end
   end
@@ -55,7 +57,7 @@ class GossipsController < ApplicationController
 
   
   def require_author
-    redirect_to login_path unless @.user == current_user
+    redirect_to login_path unless @gossip.user == current_user
   end
 
 end

@@ -52,12 +52,4 @@ Réseau social de partage de potins, créé dans le cadre de The Hacking Project
 
 - Glow in the dark mode, et canards qui te suivent tout le temps 🦆🦆🦆
 
-## Contributeurs
-
-- [:bell: Stanislas BASQUIN](https://github.com/StanislasBASQUIN)
-- [:dragon_face: Tien Duy NGUYEN](https://github.com/tienduy-nguyen)
-- [:city_sunset: Hugo Péran Séjourné](https://github.com/HugoPeranSejourne)
-- [:mega: Mathieu JOLY](https://github.com/mathieu-superpose)
-- [:santa: Vivien Ploix](https://github.com/Vivien-Ploix)
-- [:mortar_board: Chérif BA](https://github.com/barifche)
 

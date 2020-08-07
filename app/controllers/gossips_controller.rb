@@ -54,10 +54,10 @@ class GossipsController < ApplicationController
     redirect_to root_path
   end 
 
-
+private 
   
   def require_author
-    redirect_to login_path unless @gossip.user == current_user
+    redirect_to root_path unless Gossip.find(params[:id]).user == current_user
   end
 
 end

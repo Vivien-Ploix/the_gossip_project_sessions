@@ -1,6 +1,4 @@
-<html>
-  <body>
-    <!-- ... -->
+
 
     <% if @alert %>
       <div class="alert alert-danger "><%= @message %></div>
@@ -21,10 +19,6 @@
       </div>
     
       <div class="actions">
-        <%= f.submit %>
+        <%= f.submit method: :put %>
       </div>
     <% end %>
-  
-    <!-- ... -->
-  </body>
-</html>

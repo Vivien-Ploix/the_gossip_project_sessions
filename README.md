@@ -41,3 +41,8 @@ Réseau social de partage de potins, créé dans le cadre de The Hacking Project
 - [Vivien Ploix](https://github.com/Vivien-Ploix)
 - [Mathieu JOLY](https://github.com/mathieu-superpose)
 
+
+## Opération préalable : 
+
+un rake db:drop db:create db:migrate, et pour finir un petit db:seed sera nécessaire
+

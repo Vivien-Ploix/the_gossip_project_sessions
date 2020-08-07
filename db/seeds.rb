@@ -20,17 +20,21 @@ users = Array.new
 gossips = Array.new
 tags = Array.new
 
+city_list = %w(Paris Marseille Lyon Toulouse Nice Nantes Montpellier Strasbourg Bordeaux Lille Rennes Reims Saint-Etienne Le_Havre Toulon Grenoble Dijon Angers Nimes Villeurbanne)
+postcode_list = %w(75000 13000 69000 31000 06000 44000 34000 67000 33000 59000 35000 51000 42000 76600 83000 38000 21000 49000 30000 69100)
 
-10.times do
+
+for i in (0..9)
   city = City.create(
-    name: Faker::Address.city,
-    zip_code: Faker::Address.zip_code,
+    name: city_list[i],
+    zip_code: postcode_list[i],
   )
   cities << city
 end
 
 10.times do
   user = User.create(
+    password: "foobar",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     description: Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 10),

@@ -1,4 +1,4 @@
-# The Gossip Project - Views v1.0
+# The Gossip Project - Facebook Style
 _l'app putasse_
 
 <div style="text-align:center" align="center">
@@ -14,26 +14,8 @@ Réseau social de partage de potins, créé dans le cadre de The Hacking Project
 - Installez au préalable les gem  et dépendences.
   ```
   bundle install
-  bundle update
   ```
-- Configurez la base de donnée
-  
-  La gestion de la base de données est faite avec Postgres.
-  Pour exécuter ce projet en local, créez une clé sur le modèle suivant:
 
-  >username: postgres
-  >password: postgres
-
-  Sinon faites les modifications nécessaires dans le fichier `config/database.yml`
-
-  ```yml
-  development:
-  <<: *default
-  database: bairbnb_development
-  host: localhost
-  username: <<your-user-name>>
-  password: <<your-password>>
-  ```
 
 - Exécutez le base de donnée sur votre ordinateur
   
@@ -46,7 +28,7 @@ Réseau social de partage de potins, créé dans le cadre de The Hacking Project
 
 - Optimisation graphique
 
-- Génération sexuée des profils aléatoire, photos de profil en accord
+- Choix de la photo de profil
 
 - Un peu plus de putasseries
 

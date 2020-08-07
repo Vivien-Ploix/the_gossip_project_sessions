@@ -31,7 +31,8 @@
 
 <div class="form-group">
 <%= form.label :ville %>
-  <%= select("city","city",["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille", "Rennes", "Reims", "Saint-Etienne", "Le Havre", "Toulon", "Grenoble", "Dijon", "Angers", "Nimes", "Villeurbanne"]) %>
+<% city_array = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille", "Rennes", "Reims", "Saint-Etienne", "Le Havre", "Toulon", "Grenoble", "Dijon", "Angers", "Nimes", "Villeurbanne"] %>
+  <%= select("city","city", city_array) %>
 </div>
 
 

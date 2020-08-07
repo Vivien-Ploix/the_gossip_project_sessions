@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 
 
   def create
-    @user = User.new(user_params)
-    @user.city_id = City.all.sample.id  
+    @user = User.new(user_params)  
+
     if @user.save
       session[:user_id] = @user.id
       @message = "You have signed up succesfully, welcome to The Gossip Project !"
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :age, :description, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :age, :city, :description, :email, :password, :password_confirmation)
   end
 
 end
